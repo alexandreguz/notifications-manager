@@ -6,29 +6,54 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom'
+import { makeStyles } from '@mui/styles';
+import Badge from '@mui/material/Badge';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useSelector } from 'react-redux';
 
-const NavBar =() => {
-    return(
+const useStyles = makeStyles({
+    links: {
+        width: '30%',
+        display: 'flex', 
+        justifyContent: 'space-between'
+    },
+    link: {
+        color: 'white',
+        textDecoration: 'none',
+        fontSize: 18
+    }
+});
+
+
+const Navbar = () => {
+    const classes = useStyles();
+
+    const notifications = useSelector(state => state.navbar.notifications)
+
+    return (
         <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </Box>
-    );
-};
+            <AppBar position="static">
+                <Toolbar>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        Notificatoins System
+                    </Typography>
+                    <div className={classes.links}>
+                        <Link
+                            className={classes.link}
+                            to="/home"
+                        >Home</Link>
+                        <Link
+                            className={classes.link}
+                            to="/createnotification"
+                        >Create</Link>
+                        <Badge badgeContent={notifications.length} color="error">
+                            <NotificationsIcon />
+                        </Badge>
+                    </div>
+                </Toolbar>
+            </AppBar>
+        </Box>)
+}
 
-export default NavBar
+export default Navbar
