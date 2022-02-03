@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeNotificationById } from '../app/navbarSlice';
+import { removeNotificationById } from '../app/notificationsSlice';
 
 const Home = () => {
     const dispatch = useDispatch()

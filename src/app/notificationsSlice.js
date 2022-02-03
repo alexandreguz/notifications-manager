@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const navbarSlice = createSlice({
-    name: 'navbar',
+export const notificationsSlice = createSlice({
+    name: 'notifications',
     initialState: {
         notifications: [
             {
@@ -32,6 +32,6 @@ export const navbarSlice = createSlice({
     }
 })
 
-export const { addNotification,removeNotificationById } = navbarSlice.actions
+export const { addNotification,removeNotificationById } = notificationsSlice.actions
 
-export default navbarSlice.reducer
+export default notificationsSlice.reducer

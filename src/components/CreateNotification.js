@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addNotification } from '../app/navbarSlice';
+import { addNotification } from '../app/notificationsSlice';
 
 const useStyles = makeStyles({
     root: {
