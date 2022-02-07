@@ -9,12 +9,13 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeNotificationById } from '../app/notificationsSlice';
+import TemporaryDrawer from './Drawer';
 
 const Home = () => {
     const dispatch = useDispatch()
     const notifications = useSelector(state => state.navbar.notifications)
 
-    return (
+    return (<div>
         <List>
             {
                 notifications.map(element => {
@@ -42,6 +43,10 @@ const Home = () => {
                 })
             }
         </List>
+
+
+                         <TemporaryDrawer 
+                        /> </div>
     )
 }
 

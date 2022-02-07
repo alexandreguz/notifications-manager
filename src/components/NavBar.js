@@ -10,7 +10,14 @@ import { Link } from 'react-router-dom'
 import { makeStyles } from '@mui/styles';
 import Badge from '@mui/material/Badge';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import SettingsIcon from '@mui/icons-material/Settings';
 import { useSelector } from 'react-redux';
+import TemporaryDrawer from './Drawer';
+
+
+
+//
+
 
 const useStyles = makeStyles({
     links: {
@@ -22,6 +29,10 @@ const useStyles = makeStyles({
         color: 'white',
         textDecoration: 'none',
         fontSize: 18
+    },
+    drawer: {
+        color: 'white',
+        backgroundColor: 'red'
     }
 });
 
@@ -50,6 +61,10 @@ const Navbar = () => {
                         <Badge badgeContent={notifications.length} color="error">
                             <NotificationsIcon />
                         </Badge>
+                        <SettingsIcon/>
+                        <TemporaryDrawer 
+                        />
+
                     </div>
                 </Toolbar>
             </AppBar>
